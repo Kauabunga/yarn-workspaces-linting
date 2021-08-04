@@ -12,7 +12,8 @@
     "audit": "yarn npm audit --all --recursive",
     "start": "yarn workspace @yarn-workspaces-linting/package-a start",
     "lint": "yarn workspaces foreach --verbose --interlaced --all --parallel run lint",
-    "lint:fix": "yarn workspaces foreach --verbose --interlaced --all --parallel run lint --fix"
+    "lint:fix": "yarn workspaces foreach --verbose --interlaced --all --parallel run lint --fix",
+    "upgrade": "yarn upgrade-interactive"
   },
   "prettier": {
     "printWidth": 120,
@@ -20,6 +21,11 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "all"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna run --concurrency 1 --stream precommit --since HEAD --exclude-dependents"
+    }
   },
   "devDependencies": {
     "eslint": "^7.31.0",
@@ -29,6 +35,8 @@
     "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-no-only-tests": "^2.6.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^4.3.8",
+    "lerna": "^4.0.0",
     "prettier": "^2.3.2"
   }
 }
