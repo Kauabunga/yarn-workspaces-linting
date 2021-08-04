@@ -1,0 +1,23 @@
+{
+  "name": "@yarn-workspaces-linting/eslint-config",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "author": "Carson Bruce <carson.bruce@middleware.co.nz>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --quiet .",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "lint-staged": "^11.1.0"
+  },
+  "eslintConfig": {
+    "extends": "./.eslintrc.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  }
+}

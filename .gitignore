@@ -1,0 +1,13 @@
+**/node_modules/**
+
+.DS_Store
+
+
+# Yarn 2.0
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

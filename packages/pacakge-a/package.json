@@ -1,0 +1,27 @@
+{
+  "name": "@yarn-workspaces-linting/package-a",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Carson Bruce <carson.bruce@middleware.co.nz>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint --quiet .",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "@yarn-workspaces-linting/package-b": "^1.0.0"
+  },
+  "devDependencies": {
+    "lint-staged": "^11.1.0"
+  },
+  "eslintConfig": {
+    "extends": "@yarn-workspaces-linting/eslint-config"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  }
+}
